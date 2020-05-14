@@ -1,0 +1,20 @@
+{block content}
+<div>
+    <h4>{$kniha->author}</h4>
+</div>
+<div>
+    <h3>{$kniha->title}</h3>
+</div>
+<div>
+   {$kniha->anotation}
+</div>
+<center>
+<div>
+    <p>
+    Literární druh: {$kniha->category} | Rok vzniku: {$kniha->year} | Hodnocení : {$kniha->stars}
+    </p>
+ </div>
+
+</center>
+
+<a n:href="Homepage">Zpět</a>

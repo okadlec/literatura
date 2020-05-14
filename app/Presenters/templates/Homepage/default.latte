@@ -1,0 +1,28 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+	<h2 class="text-center">Úvodní stránka</h2>
+	
+<table class="table table-bordered table-stripped">
+	<tr>
+	  <th><a n:href="default 'title'">Název díla</a></th>
+	  <th><a n:href="default 'author'">Autor</a></th>
+	  <th><a n:href="default 'year'">Rok vzniku</th></a>
+	  <th><a n:href="default 'category'">Literární druh</th></a>
+	  <th>Akce</th>
+	</tr>
+	{foreach $knihy as $kniha}
+	<tr>
+		<th><a n:href="kniha $kniha->id">{$kniha->title}</a></th>
+		<th>{$kniha->author}</th>
+		<th>{$kniha->year}</th>
+		<th>{$kniha->category}</th>
+		<th><a n:href="Homepage:update $kniha->id" class="btn btn-success">Upravit</a> 
+			<a n:href="Homepage:delete $kniha->id" class="btn btn-danger">Odstranění</a></th>
+	  </tr>
+	{/foreach}
+	
+  </table>
+  <p><a n:href="Homepage:insert" class="btn btn-primary">Nové dílo</a></p>
+{/block}
+
